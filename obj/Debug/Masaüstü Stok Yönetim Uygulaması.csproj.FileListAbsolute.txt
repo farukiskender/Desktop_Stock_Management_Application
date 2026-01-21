@@ -1,0 +1,10 @@
+C:\Github\Desktop_Stock_Management_Application\obj\Debug\Masaüstü Stok Yönetim Uygulaması.csproj.AssemblyReference.cache
+C:\Github\Desktop_Stock_Management_Application\obj\Debug\Masaüstü_Stok_Yönetim_Uygulaması.Form1.resources
+C:\Github\Desktop_Stock_Management_Application\obj\Debug\Masaüstü_Stok_Yönetim_Uygulaması.Properties.Resources.resources
+C:\Github\Desktop_Stock_Management_Application\obj\Debug\Masaüstü Stok Yönetim Uygulaması.csproj.GenerateResource.cache
+C:\Github\Desktop_Stock_Management_Application\obj\Debug\Masaüstü Stok Yönetim Uygulaması.csproj.CoreCompileInputs.cache
+C:\Github\Desktop_Stock_Management_Application\bin\Debug\Masaüstü Stok Yönetim Uygulaması.exe.config
+C:\Github\Desktop_Stock_Management_Application\bin\Debug\Masaüstü Stok Yönetim Uygulaması.exe
+C:\Github\Desktop_Stock_Management_Application\bin\Debug\Masaüstü Stok Yönetim Uygulaması.pdb
+C:\Github\Desktop_Stock_Management_Application\obj\Debug\Masaüstü Stok Yönetim Uygulaması.exe
+C:\Github\Desktop_Stock_Management_Application\obj\Debug\Masaüstü Stok Yönetim Uygulaması.pdb
