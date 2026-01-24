@@ -16,7 +16,7 @@ namespace Masaüstü_Stok_Yönetim_Uygulaması
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main_Wİndow());
+            Application.Run(new AnaSayfa());
         }
     }
 }

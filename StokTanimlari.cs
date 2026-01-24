@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace Masaüstü_Stok_Yönetim_Uygulaması
 {
-    public partial class YeniStokWindow : Form
+    public partial class StokTanimlari : Form
     {
-        public YeniStokWindow()
+        public StokTanimlari()
         {
             InitializeComponent();
         }
 
         private void YeniStokWindow_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

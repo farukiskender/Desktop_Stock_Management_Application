@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="YeniStokWindow.cs">
+    <Compile Include="StokTanimlari.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="YeniStokWindow.Designer.cs">
-      <DependentUpon>YeniStokWindow.cs</DependentUpon>
+    <Compile Include="StokTanimlari.Designer.cs">
+      <DependentUpon>StokTanimlari.cs</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
@@ -71,9 +71,10 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="YeniStokWindow.resx">
-      <DependentUpon>YeniStokWindow.cs</DependentUpon>
+    <EmbeddedResource Include="StokTanimlari.resx">
+      <DependentUpon>StokTanimlari.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -87,6 +88,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\box_add_64dp_E3E3E3_FILL0_wght400_GRAD0_opsz48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

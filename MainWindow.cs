@@ -10,14 +10,45 @@ using System.Windows.Forms;
 
 namespace Masaüstü_Stok_Yönetim_Uygulaması
 {
-    public partial class Form1 : Form
+    public partial class AnaSayfa : Form
     {
-        public Form1()
+        private void FormAc(string FormAdi)
+        {
+            foreach (Form acikForm in this.MdiChildren)
+            {
+                if (acikForm.Name == FormAdi)
+                {
+                    acikForm.BringToFront();
+                    return;
+                }
+            }
+            Form YeniForm = null;
+
+            switch (FormAdi)
+            {
+                case "StokTanimlari":
+                    YeniForm = new StokTanimlari();
+                    break;
+
+                default:
+                    MessageBox.Show("Form Sayfası Bulunamadı:" + FormAdi);
+                    return;
+            }
+            if (YeniForm != null)
+            {
+                YeniForm.Name = FormAdi;
+                YeniForm.WindowState = FormWindowState.Normal;
+                YeniForm.Show();
+            }
+
+        }
+
+
+        public AnaSayfa()
         {
             InitializeComponent();
         }
-
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
@@ -25,6 +56,17 @@ namespace Masaüstü_Stok_Yönetim_Uygulaması
         private void lvMasaustu_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void treeView1_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if (e.Node.Tag==null || e.Node.Tag.ToString()=="")
+            {
+                return; 
+            }
+            string StokTanimlari = e.Node.Tag.ToString();
+
+            FormAc(StokTanimlari);
         }
     }
 }
