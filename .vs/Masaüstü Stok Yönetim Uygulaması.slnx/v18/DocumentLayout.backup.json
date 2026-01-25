@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "C:\\Github\\Desktop_Stock_Management_Application\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{198F8AFA-D115-4F33-9894-F4609FD268E6}|Masa\u00FCst\u00FC Stok Y\u00F6netim Uygulamas\u0131.csproj|c:\\github\\desktop_stock_management_application\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{198F8AFA-D115-4F33-9894-F4609FD268E6}|Masa\u00FCst\u00FC Stok Y\u00F6netim Uygulamas\u0131.csproj|solutionrelative:mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{198F8AFA-D115-4F33-9894-F4609FD268E6}|Masa\u00FCst\u00FC Stok Y\u00F6netim Uygulamas\u0131.csproj|c:\\github\\desktop_stock_management_application\\stoktanimlari.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{198F8AFA-D115-4F33-9894-F4609FD268E6}|Masa\u00FCst\u00FC Stok Y\u00F6netim Uygulamas\u0131.csproj|solutionrelative:stoktanimlari.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{198F8AFA-D115-4F33-9894-F4609FD268E6}|Masa\u00FCst\u00FC Stok Y\u00F6netim Uygulamas\u0131.csproj|c:\\github\\desktop_stock_management_application\\stoktanimlari.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{198F8AFA-D115-4F33-9894-F4609FD268E6}|Masa\u00FCst\u00FC Stok Y\u00F6netim Uygulamas\u0131.csproj|solutionrelative:stoktanimlari.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{198F8AFA-D115-4F33-9894-F4609FD268E6}|Masa\u00FCst\u00FC Stok Y\u00F6netim Uygulamas\u0131.csproj|c:\\github\\desktop_stock_management_application\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{198F8AFA-D115-4F33-9894-F4609FD268E6}|Masa\u00FCst\u00FC Stok Y\u00F6netim Uygulamas\u0131.csproj|c:\\github\\desktop_stock_management_application\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{198F8AFA-D115-4F33-9894-F4609FD268E6}|Masa\u00FCst\u00FC Stok Y\u00F6netim Uygulamas\u0131.csproj|solutionrelative:mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{198F8AFA-D115-4F33-9894-F4609FD268E6}|Masa\u00FCst\u00FC Stok Y\u00F6netim Uygulamas\u0131.csproj|C:\\Github\\Desktop_Stock_Management_Application\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{198F8AFA-D115-4F33-9894-F4609FD268E6}|Masa\u00FCst\u00FC Stok Y\u00F6netim Uygulamas\u0131.csproj|solutionrelative:mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{198F8AFA-D115-4F33-9894-F4609FD268E6}|Masa\u00FCst\u00FC Stok Y\u00F6netim Uygulamas\u0131.csproj|c:\\github\\desktop_stock_management_application\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{198F8AFA-D115-4F33-9894-F4609FD268E6}|Masa\u00FCst\u00FC Stok Y\u00F6netim Uygulamas\u0131.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{198F8AFA-D115-4F33-9894-F4609FD268E6}|Masa\u00FCst\u00FC Stok Y\u00F6netim Uygulamas\u0131.csproj|C:\\Github\\Desktop_Stock_Management_Application\\stoktanimlari.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{198F8AFA-D115-4F33-9894-F4609FD268E6}|Masa\u00FCst\u00FC Stok Y\u00F6netim Uygulamas\u0131.csproj|solutionrelative:stoktanimlari.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,70 +26,57 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Github\\Desktop_Stock_Management_Application\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Github\\Desktop_Stock_Management_Application\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAATAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "StokTanimlari.cs",
+              "DocumentMoniker": "C:\\Github\\Desktop_Stock_Management_Application\\StokTanimlari.cs",
+              "RelativeDocumentMoniker": "StokTanimlari.cs",
+              "ToolTip": "C:\\Github\\Desktop_Stock_Management_Application\\StokTanimlari.cs*",
+              "RelativeToolTip": "StokTanimlari.cs*",
+              "ViewState": "AgIAABYAAAAAAAAAAAAEwCYAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T19:31:28.729Z",
+              "WhenOpened": "2026-01-25T20:10:38.092Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "StokTanimlari.cs [Tasar\u0131m]",
+              "DocumentMoniker": "C:\\Github\\Desktop_Stock_Management_Application\\StokTanimlari.cs",
+              "RelativeDocumentMoniker": "StokTanimlari.cs",
+              "ToolTip": "C:\\Github\\Desktop_Stock_Management_Application\\StokTanimlari.cs [Tasar\u0131m]*",
+              "RelativeToolTip": "StokTanimlari.cs [Tasar\u0131m]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T18:23:48.725Z",
+              "EditorCaption": " [Tasar\u0131m]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "MainWindow.cs [Tasar\u0131m]",
               "DocumentMoniker": "C:\\Github\\Desktop_Stock_Management_Application\\MainWindow.cs",
               "RelativeDocumentMoniker": "MainWindow.cs",
-              "ToolTip": "C:\\Github\\Desktop_Stock_Management_Application\\MainWindow.cs [Tasar\u0131m]",
-              "RelativeToolTip": "MainWindow.cs [Tasar\u0131m]",
+              "ToolTip": "C:\\Github\\Desktop_Stock_Management_Application\\MainWindow.cs [Tasar\u0131m]*",
+              "RelativeToolTip": "MainWindow.cs [Tasar\u0131m]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-24T19:30:15.303Z",
               "EditorCaption": " [Tasar\u0131m]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainWindow.cs",
               "DocumentMoniker": "C:\\Github\\Desktop_Stock_Management_Application\\MainWindow.cs",
               "RelativeDocumentMoniker": "MainWindow.cs",
-              "ToolTip": "C:\\Github\\Desktop_Stock_Management_Application\\MainWindow.cs",
-              "RelativeToolTip": "MainWindow.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAmwB4AAAAaAAAAAAAAAA==",
+              "ToolTip": "C:\\Github\\Desktop_Stock_Management_Application\\MainWindow.cs*",
+              "RelativeToolTip": "MainWindow.cs*",
+              "ViewState": "AgIAADMAAAAAAAAAAAAjwEwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-24T18:11:43.701Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "StokTanimlari.cs",
-              "DocumentMoniker": "C:\\Github\\Desktop_Stock_Management_Application\\StokTanimlari.cs",
-              "RelativeDocumentMoniker": "StokTanimlari.cs",
-              "ToolTip": "C:\\Github\\Desktop_Stock_Management_Application\\StokTanimlari.cs",
-              "RelativeToolTip": "StokTanimlari.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAuwBUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T19:43:07.803Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "StokTanimlari.cs [Tasar\u0131m]",
-              "DocumentMoniker": "C:\\Github\\Desktop_Stock_Management_Application\\StokTanimlari.cs",
-              "RelativeDocumentMoniker": "StokTanimlari.cs",
-              "ToolTip": "C:\\Github\\Desktop_Stock_Management_Application\\StokTanimlari.cs [Tasar\u0131m]",
-              "RelativeToolTip": "StokTanimlari.cs [Tasar\u0131m]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T18:23:48.725Z",
-              "EditorCaption": " [Tasar\u0131m]"
             }
           ]
         }

@@ -7,5 +7,8 @@ C:\Github\Desktop_Stock_Management_Application\bin\Debug\Masaüstü Stok Yöneti
 C:\Github\Desktop_Stock_Management_Application\bin\Debug\Masaüstü Stok Yönetim Uygulaması.pdb
 C:\Github\Desktop_Stock_Management_Application\obj\Debug\Masaüstü Stok Yönetim Uygulaması.exe
 C:\Github\Desktop_Stock_Management_Application\obj\Debug\Masaüstü Stok Yönetim Uygulaması.pdb
-C:\Github\Desktop_Stock_Management_Application\obj\Debug\Masaüstü_Stok_Yönetim_Uygulaması.StokTanimlari.resources
 C:\Github\Desktop_Stock_Management_Application\obj\Debug\Masaüstü_Stok_Yönetim_Uygulaması.AnaSayfa.resources
+C:\Github\Desktop_Stock_Management_Application\obj\Debug\Masaüstü_Stok_Yönetim_Uygulaması.StokKartlari.resources
+C:\Github\Desktop_Stock_Management_Application\obj\Debug\Masaüstü_Stok_Yönetim_Uygulaması.lbl_KritikSeviyeUrunler.resources
+C:\Github\Desktop_Stock_Management_Application\obj\Debug\Masaüstü_Stok_Yönetim_Uygulaması.StokHareketleri.resources
+C:\Github\Desktop_Stock_Management_Application\obj\Debug\Masaüstü_Stok_Yönetim_Uygulaması.a.resources

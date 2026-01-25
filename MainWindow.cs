@@ -27,7 +27,16 @@ namespace Masaüstü_Stok_Yönetim_Uygulaması
             switch (FormAdi)
             {
                 case "StokTanimlari":
-                    YeniForm = new StokTanimlari();
+                    YeniForm = new a();
+                    break;
+                case "StokKartlari":
+                    YeniForm = new StokKartlari();
+                    break;
+                case "KritikSeviyeUrunler":
+                    YeniForm = new lbl_KritikSeviyeUrunler();
+                    break;
+                case "StokHareketleri":
+                    YeniForm = new StokHareketleri();
                     break;
 
                 default:
@@ -64,9 +73,14 @@ namespace Masaüstü_Stok_Yönetim_Uygulaması
             {
                 return; 
             }
-            string StokTanimlari = e.Node.Tag.ToString();
+            string yeniFormAdi = e.Node.Tag.ToString();
 
-            FormAc(StokTanimlari);
+            FormAc(yeniFormAdi);
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
         }
     }
 }

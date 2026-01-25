@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KritikSeviyeUrunler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KritikSeviyeUrunler.Designer.cs">
+      <DependentUpon>KritikSeviyeUrunler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StokHareketleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StokHareketleri.Designer.cs">
+      <DependentUpon>StokHareketleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StokKartlari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StokKartlari.Designer.cs">
+      <DependentUpon>StokKartlari.cs</DependentUpon>
+    </Compile>
     <Compile Include="StokTanimlari.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +78,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="KritikSeviyeUrunler.resx">
+      <DependentUpon>KritikSeviyeUrunler.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -73,6 +94,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="StokHareketleri.resx">
+      <DependentUpon>StokHareketleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StokKartlari.resx">
+      <DependentUpon>StokKartlari.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StokTanimlari.resx">
       <DependentUpon>StokTanimlari.cs</DependentUpon>
     </EmbeddedResource>
@@ -91,6 +118,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\box_add_64dp_E3E3E3_FILL0_wght400_GRAD0_opsz48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\view_list_64dp_000000_FILL0_wght400_GRAD0_opsz48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
