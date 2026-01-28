@@ -34,36 +34,33 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tb_brand_name = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tb_model_name = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tb_product_barkode = new System.Windows.Forms.TextBox();
             this.rb_seri_no_takip = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tb_product_group = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.cb_birim = new System.Windows.Forms.ComboBox();
+            this.tb_product_subgorup = new System.Windows.Forms.TextBox();
+            this.cb_product_unit = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.lbl_koli_adedi = new System.Windows.Forms.Label();
-            this.tb_koli_adedi = new System.Windows.Forms.TextBox();
+            this.tb_number_of_packages = new System.Windows.Forms.TextBox();
             this.lbl_stok_kodu = new System.Windows.Forms.Label();
-            this.tb_stok_kodu = new System.Windows.Forms.TextBox();
+            this.tb_producte_code = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.tb_purchase_price = new System.Windows.Forms.TextBox();
+            this.tb_sales_price = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.tb_taxrate = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.tb_kritik_stok_seviyesi = new System.Windows.Forms.TextBox();
-            this.lbl_kritik_stok_seviyesi = new System.Windows.Forms.Label();
+            this.tb_critical_stock_level = new System.Windows.Forms.TextBox();
             this.rb_kritik_stok_uyari = new System.Windows.Forms.RadioButton();
-            this.rtb_urun_aciklamasi = new System.Windows.Forms.RichTextBox();
+            this.rtb_product_description = new System.Windows.Forms.RichTextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.btn_kaydet = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -103,7 +100,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1262, 82);
+            this.panel1.Size = new System.Drawing.Size(1147, 82);
             this.panel1.TabIndex = 3;
             // 
             // pictureBox1
@@ -122,7 +119,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(144, 9);
+            this.label2.Location = new System.Drawing.Point(144, 12);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.label2.Size = new System.Drawing.Size(295, 61);
@@ -131,23 +128,14 @@
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // label3
+            // tb_brand_name
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(952, 315);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 16);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Ürün Adı";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox1.Location = new System.Drawing.Point(476, 118);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(142, 22);
-            this.textBox1.TabIndex = 1;
+            this.tb_brand_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tb_brand_name.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_brand_name.Location = new System.Drawing.Point(476, 118);
+            this.tb_brand_name.Name = "tb_brand_name";
+            this.tb_brand_name.Size = new System.Drawing.Size(142, 22);
+            this.tb_brand_name.TabIndex = 1;
             // 
             // label4
             // 
@@ -158,32 +146,14 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Model Adı";
             // 
-            // textBox2
+            // tb_model_name
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox2.Location = new System.Drawing.Point(828, 412);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(356, 22);
-            this.textBox2.TabIndex = 1;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox3.Location = new System.Drawing.Point(799, 366);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(356, 22);
-            this.textBox3.TabIndex = 1;
-            // 
-            // textBox4
-            // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox4.Location = new System.Drawing.Point(476, 164);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(142, 22);
-            this.textBox4.TabIndex = 1;
+            this.tb_model_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tb_model_name.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_model_name.Location = new System.Drawing.Point(476, 164);
+            this.tb_model_name.Name = "tb_model_name";
+            this.tb_model_name.Size = new System.Drawing.Size(142, 22);
+            this.tb_model_name.TabIndex = 1;
             // 
             // label5
             // 
@@ -194,14 +164,14 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Barkod";
             // 
-            // textBox6
+            // tb_product_barkode
             // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox6.Location = new System.Drawing.Point(28, 176);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(142, 22);
-            this.textBox6.TabIndex = 1;
+            this.tb_product_barkode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tb_product_barkode.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_product_barkode.Location = new System.Drawing.Point(28, 176);
+            this.tb_product_barkode.Name = "tb_product_barkode";
+            this.tb_product_barkode.Size = new System.Drawing.Size(142, 22);
+            this.tb_product_barkode.TabIndex = 1;
             // 
             // rb_seri_no_takip
             // 
@@ -218,53 +188,53 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(25, 222);
+            this.label6.Location = new System.Drawing.Point(25, 218);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 16);
             this.label6.TabIndex = 0;
             this.label6.Text = "Grupu";
             // 
-            // textBox5
+            // tb_product_group
             // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox5.Location = new System.Drawing.Point(28, 239);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(142, 22);
-            this.textBox5.TabIndex = 1;
+            this.tb_product_group.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tb_product_group.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_product_group.Location = new System.Drawing.Point(28, 239);
+            this.tb_product_group.Name = "tb_product_group";
+            this.tb_product_group.Size = new System.Drawing.Size(142, 22);
+            this.tb_product_group.TabIndex = 1;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(25, 278);
+            this.label7.Location = new System.Drawing.Point(25, 276);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 16);
             this.label7.TabIndex = 0;
             this.label7.Text = "Alt Grupu";
             // 
-            // textBox7
+            // tb_product_subgorup
             // 
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox7.Location = new System.Drawing.Point(28, 295);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(142, 22);
-            this.textBox7.TabIndex = 1;
+            this.tb_product_subgorup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tb_product_subgorup.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_product_subgorup.Location = new System.Drawing.Point(28, 295);
+            this.tb_product_subgorup.Name = "tb_product_subgorup";
+            this.tb_product_subgorup.Size = new System.Drawing.Size(142, 22);
+            this.tb_product_subgorup.TabIndex = 1;
             // 
-            // cb_birim
+            // cb_product_unit
             // 
-            this.cb_birim.FormattingEnabled = true;
-            this.cb_birim.Items.AddRange(new object[] {
+            this.cb_product_unit.FormattingEnabled = true;
+            this.cb_product_unit.Items.AddRange(new object[] {
             "Adet",
             "Metre",
             "CM",
             "KM",
             "Koli"});
-            this.cb_birim.Location = new System.Drawing.Point(242, 237);
-            this.cb_birim.Name = "cb_birim";
-            this.cb_birim.Size = new System.Drawing.Size(142, 24);
-            this.cb_birim.TabIndex = 5;
-            this.cb_birim.TextUpdate += new System.EventHandler(this.comboBox1_TextUpdate);
+            this.cb_product_unit.Location = new System.Drawing.Point(242, 237);
+            this.cb_product_unit.Name = "cb_product_unit";
+            this.cb_product_unit.Size = new System.Drawing.Size(142, 24);
+            this.cb_product_unit.TabIndex = 5;
+            this.cb_product_unit.TextUpdate += new System.EventHandler(this.comboBox1_TextUpdate);
             // 
             // label8
             // 
@@ -278,7 +248,7 @@
             // lbl_koli_adedi
             // 
             this.lbl_koli_adedi.AutoSize = true;
-            this.lbl_koli_adedi.Location = new System.Drawing.Point(387, 222);
+            this.lbl_koli_adedi.Location = new System.Drawing.Point(387, 218);
             this.lbl_koli_adedi.Name = "lbl_koli_adedi";
             this.lbl_koli_adedi.Size = new System.Drawing.Size(68, 16);
             this.lbl_koli_adedi.TabIndex = 6;
@@ -286,15 +256,15 @@
             this.lbl_koli_adedi.Visible = false;
             this.lbl_koli_adedi.Click += new System.EventHandler(this.label9_Click);
             // 
-            // tb_koli_adedi
+            // tb_number_of_packages
             // 
-            this.tb_koli_adedi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tb_koli_adedi.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tb_koli_adedi.Location = new System.Drawing.Point(390, 239);
-            this.tb_koli_adedi.Name = "tb_koli_adedi";
-            this.tb_koli_adedi.Size = new System.Drawing.Size(142, 22);
-            this.tb_koli_adedi.TabIndex = 1;
-            this.tb_koli_adedi.Visible = false;
+            this.tb_number_of_packages.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tb_number_of_packages.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_number_of_packages.Location = new System.Drawing.Point(390, 237);
+            this.tb_number_of_packages.Name = "tb_number_of_packages";
+            this.tb_number_of_packages.Size = new System.Drawing.Size(142, 22);
+            this.tb_number_of_packages.TabIndex = 1;
+            this.tb_number_of_packages.Visible = false;
             // 
             // lbl_stok_kodu
             // 
@@ -305,41 +275,41 @@
             this.lbl_stok_kodu.TabIndex = 0;
             this.lbl_stok_kodu.Text = "Stok Kodu";
             // 
-            // tb_stok_kodu
+            // tb_producte_code
             // 
-            this.tb_stok_kodu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tb_stok_kodu.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tb_stok_kodu.Location = new System.Drawing.Point(242, 176);
-            this.tb_stok_kodu.Name = "tb_stok_kodu";
-            this.tb_stok_kodu.Size = new System.Drawing.Size(142, 22);
-            this.tb_stok_kodu.TabIndex = 1;
+            this.tb_producte_code.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tb_producte_code.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_producte_code.Location = new System.Drawing.Point(242, 176);
+            this.tb_producte_code.Name = "tb_producte_code";
+            this.tb_producte_code.Size = new System.Drawing.Size(142, 22);
+            this.tb_producte_code.TabIndex = 1;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(239, 374);
+            this.label9.Location = new System.Drawing.Point(239, 372);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(117, 16);
             this.label9.TabIndex = 0;
             this.label9.Text = "Güncel Satış Fiyatı";
             // 
-            // textBox8
+            // tb_purchase_price
             // 
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox8.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox8.Location = new System.Drawing.Point(28, 391);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(142, 22);
-            this.textBox8.TabIndex = 1;
+            this.tb_purchase_price.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tb_purchase_price.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_purchase_price.Location = new System.Drawing.Point(28, 391);
+            this.tb_purchase_price.Name = "tb_purchase_price";
+            this.tb_purchase_price.Size = new System.Drawing.Size(142, 22);
+            this.tb_purchase_price.TabIndex = 1;
             // 
-            // textBox9
+            // tb_sales_price
             // 
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox9.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox9.Location = new System.Drawing.Point(242, 391);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(142, 22);
-            this.textBox9.TabIndex = 1;
+            this.tb_sales_price.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tb_sales_price.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_sales_price.Location = new System.Drawing.Point(242, 391);
+            this.tb_sales_price.Name = "tb_sales_price";
+            this.tb_sales_price.Size = new System.Drawing.Size(142, 22);
+            this.tb_sales_price.TabIndex = 1;
             // 
             // label10
             // 
@@ -350,41 +320,32 @@
             this.label10.TabIndex = 2;
             this.label10.Text = "Son Alış Fiyatı";
             // 
-            // textBox10
+            // tb_taxrate
             // 
-            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox10.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox10.Location = new System.Drawing.Point(476, 391);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(142, 22);
-            this.textBox10.TabIndex = 8;
+            this.tb_taxrate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tb_taxrate.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_taxrate.Location = new System.Drawing.Point(476, 391);
+            this.tb_taxrate.Name = "tb_taxrate";
+            this.tb_taxrate.Size = new System.Drawing.Size(142, 22);
+            this.tb_taxrate.TabIndex = 8;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(473, 374);
+            this.label11.Location = new System.Drawing.Point(473, 372);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(92, 16);
             this.label11.TabIndex = 7;
             this.label11.Text = "KDV Oranı (%)";
             // 
-            // tb_kritik_stok_seviyesi
+            // tb_critical_stock_level
             // 
-            this.tb_kritik_stok_seviyesi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tb_kritik_stok_seviyesi.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tb_kritik_stok_seviyesi.Location = new System.Drawing.Point(733, 164);
-            this.tb_kritik_stok_seviyesi.Name = "tb_kritik_stok_seviyesi";
-            this.tb_kritik_stok_seviyesi.Size = new System.Drawing.Size(142, 22);
-            this.tb_kritik_stok_seviyesi.TabIndex = 10;
-            // 
-            // lbl_kritik_stok_seviyesi
-            // 
-            this.lbl_kritik_stok_seviyesi.AutoSize = true;
-            this.lbl_kritik_stok_seviyesi.Location = new System.Drawing.Point(730, 147);
-            this.lbl_kritik_stok_seviyesi.Name = "lbl_kritik_stok_seviyesi";
-            this.lbl_kritik_stok_seviyesi.Size = new System.Drawing.Size(120, 16);
-            this.lbl_kritik_stok_seviyesi.TabIndex = 9;
-            this.lbl_kritik_stok_seviyesi.Text = "Kritik Stok Seviyesi";
+            this.tb_critical_stock_level.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tb_critical_stock_level.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_critical_stock_level.Location = new System.Drawing.Point(722, 145);
+            this.tb_critical_stock_level.Name = "tb_critical_stock_level";
+            this.tb_critical_stock_level.Size = new System.Drawing.Size(142, 22);
+            this.tb_critical_stock_level.TabIndex = 10;
             // 
             // rb_kritik_stok_uyari
             // 
@@ -398,15 +359,15 @@
             this.rb_kritik_stok_uyari.UseVisualStyleBackColor = true;
             this.rb_kritik_stok_uyari.CheckedChanged += new System.EventHandler(this.rb_seri_no_takip_CheckedChanged);
             // 
-            // rtb_urun_aciklamasi
+            // rtb_product_description
             // 
-            this.rtb_urun_aciklamasi.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.rtb_urun_aciklamasi.Location = new System.Drawing.Point(28, 445);
-            this.rtb_urun_aciklamasi.MaxLength = 350;
-            this.rtb_urun_aciklamasi.Name = "rtb_urun_aciklamasi";
-            this.rtb_urun_aciklamasi.Size = new System.Drawing.Size(590, 96);
-            this.rtb_urun_aciklamasi.TabIndex = 11;
-            this.rtb_urun_aciklamasi.Text = "";
+            this.rtb_product_description.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.rtb_product_description.Location = new System.Drawing.Point(28, 445);
+            this.rtb_product_description.MaxLength = 350;
+            this.rtb_product_description.Name = "rtb_product_description";
+            this.rtb_product_description.Size = new System.Drawing.Size(590, 101);
+            this.rtb_product_description.TabIndex = 11;
+            this.rtb_product_description.Text = "";
             // 
             // label12
             // 
@@ -417,48 +378,55 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "Ürün Açıklaması ";
             // 
+            // btn_kaydet
+            // 
+            this.btn_kaydet.Location = new System.Drawing.Point(1007, 483);
+            this.btn_kaydet.Name = "btn_kaydet";
+            this.btn_kaydet.Size = new System.Drawing.Size(125, 63);
+            this.btn_kaydet.TabIndex = 12;
+            this.btn_kaydet.Text = "Kaydet";
+            this.btn_kaydet.UseVisualStyleBackColor = true;
+            this.btn_kaydet.Click += new System.EventHandler(this.btn_kaydet_Click);
+            // 
             // a
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1262, 673);
-            this.Controls.Add(this.rtb_urun_aciklamasi);
-            this.Controls.Add(this.tb_kritik_stok_seviyesi);
-            this.Controls.Add(this.lbl_kritik_stok_seviyesi);
-            this.Controls.Add(this.textBox10);
+            this.ClientSize = new System.Drawing.Size(1147, 568);
+            this.Controls.Add(this.btn_kaydet);
+            this.Controls.Add(this.rtb_product_description);
+            this.Controls.Add(this.tb_critical_stock_level);
+            this.Controls.Add(this.tb_taxrate);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.lbl_koli_adedi);
-            this.Controls.Add(this.cb_birim);
+            this.Controls.Add(this.cb_product_unit);
             this.Controls.Add(this.rb_kritik_stok_uyari);
             this.Controls.Add(this.rb_seri_no_takip);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.tb_stok_kodu);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.tb_koli_adedi);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.tb_product_subgorup);
+            this.Controls.Add(this.tb_product_group);
+            this.Controls.Add(this.tb_producte_code);
+            this.Controls.Add(this.tb_product_barkode);
+            this.Controls.Add(this.tb_number_of_packages);
+            this.Controls.Add(this.tb_sales_price);
+            this.Controls.Add(this.tb_model_name);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tb_purchase_price);
+            this.Controls.Add(this.tb_brand_name);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lbl_stok_kodu);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.tb_product_name);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.LB_product_name);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "a";
-            this.Text = "m";
+            this.Text = "Stok Tanımları";
             this.Load += new System.EventHandler(this.YeniStokWindow_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -475,35 +443,32 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_brand_name;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tb_model_name;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tb_product_barkode;
         private System.Windows.Forms.RadioButton rb_seri_no_takip;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox tb_product_group;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.ComboBox cb_birim;
+        private System.Windows.Forms.TextBox tb_product_subgorup;
+        private System.Windows.Forms.ComboBox cb_product_unit;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lbl_koli_adedi;
-        private System.Windows.Forms.TextBox tb_koli_adedi;
+        private System.Windows.Forms.TextBox tb_number_of_packages;
         private System.Windows.Forms.Label lbl_stok_kodu;
-        private System.Windows.Forms.TextBox tb_stok_kodu;
+        private System.Windows.Forms.TextBox tb_producte_code;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox tb_purchase_price;
+        private System.Windows.Forms.TextBox tb_sales_price;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox tb_taxrate;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox tb_kritik_stok_seviyesi;
-        private System.Windows.Forms.Label lbl_kritik_stok_seviyesi;
+        private System.Windows.Forms.TextBox tb_critical_stock_level;
         private System.Windows.Forms.RadioButton rb_kritik_stok_uyari;
-        private System.Windows.Forms.RichTextBox rtb_urun_aciklamasi;
+        private System.Windows.Forms.RichTextBox rtb_product_description;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btn_kaydet;
     }
 }
