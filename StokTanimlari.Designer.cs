@@ -41,13 +41,9 @@
             this.tb_product_barkode = new System.Windows.Forms.TextBox();
             this.rb_seri_no_takip = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
-            this.tb_product_group = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.tb_product_subgorup = new System.Windows.Forms.TextBox();
             this.cb_product_unit = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.lbl_koli_adedi = new System.Windows.Forms.Label();
-            this.tb_number_of_packages = new System.Windows.Forms.TextBox();
             this.lbl_stok_kodu = new System.Windows.Forms.Label();
             this.tb_producte_code = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -60,7 +56,11 @@
             this.rb_kritik_stok_uyari = new System.Windows.Forms.RadioButton();
             this.rtb_product_description = new System.Windows.Forms.RichTextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.btn_kaydet = new System.Windows.Forms.Button();
+            this.btn_save = new System.Windows.Forms.Button();
+            this.btnTest = new System.Windows.Forms.Button();
+            this.btn_clear = new System.Windows.Forms.Button();
+            this.cb_product_group = new System.Windows.Forms.ComboBox();
+            this.cb_product_subgorup = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -194,15 +194,6 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Grupu";
             // 
-            // tb_product_group
-            // 
-            this.tb_product_group.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tb_product_group.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tb_product_group.Location = new System.Drawing.Point(28, 239);
-            this.tb_product_group.Name = "tb_product_group";
-            this.tb_product_group.Size = new System.Drawing.Size(142, 22);
-            this.tb_product_group.TabIndex = 1;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -211,15 +202,6 @@
             this.label7.Size = new System.Drawing.Size(61, 16);
             this.label7.TabIndex = 0;
             this.label7.Text = "Alt Grupu";
-            // 
-            // tb_product_subgorup
-            // 
-            this.tb_product_subgorup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tb_product_subgorup.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tb_product_subgorup.Location = new System.Drawing.Point(28, 295);
-            this.tb_product_subgorup.Name = "tb_product_subgorup";
-            this.tb_product_subgorup.Size = new System.Drawing.Size(142, 22);
-            this.tb_product_subgorup.TabIndex = 1;
             // 
             // cb_product_unit
             // 
@@ -244,27 +226,6 @@
             this.label8.Size = new System.Drawing.Size(40, 16);
             this.label8.TabIndex = 0;
             this.label8.Text = "Birimi";
-            // 
-            // lbl_koli_adedi
-            // 
-            this.lbl_koli_adedi.AutoSize = true;
-            this.lbl_koli_adedi.Location = new System.Drawing.Point(387, 218);
-            this.lbl_koli_adedi.Name = "lbl_koli_adedi";
-            this.lbl_koli_adedi.Size = new System.Drawing.Size(68, 16);
-            this.lbl_koli_adedi.TabIndex = 6;
-            this.lbl_koli_adedi.Text = "Koli Adedi";
-            this.lbl_koli_adedi.Visible = false;
-            this.lbl_koli_adedi.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // tb_number_of_packages
-            // 
-            this.tb_number_of_packages.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tb_number_of_packages.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tb_number_of_packages.Location = new System.Drawing.Point(390, 237);
-            this.tb_number_of_packages.Name = "tb_number_of_packages";
-            this.tb_number_of_packages.Size = new System.Drawing.Size(142, 22);
-            this.tb_number_of_packages.TabIndex = 1;
-            this.tb_number_of_packages.Visible = false;
             // 
             // lbl_stok_kodu
             // 
@@ -378,38 +339,75 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "Ürün Açıklaması ";
             // 
-            // btn_kaydet
+            // btn_save
             // 
-            this.btn_kaydet.Location = new System.Drawing.Point(1007, 483);
-            this.btn_kaydet.Name = "btn_kaydet";
-            this.btn_kaydet.Size = new System.Drawing.Size(125, 63);
-            this.btn_kaydet.TabIndex = 12;
-            this.btn_kaydet.Text = "Kaydet";
-            this.btn_kaydet.UseVisualStyleBackColor = true;
-            this.btn_kaydet.Click += new System.EventHandler(this.btn_kaydet_Click);
+            this.btn_save.Location = new System.Drawing.Point(1007, 483);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(125, 63);
+            this.btn_save.TabIndex = 12;
+            this.btn_save.Text = "Yeni Ürün Ekle";
+            this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.Click += new System.EventHandler(this.btn_kaydet_Click);
+            // 
+            // btnTest
+            // 
+            this.btnTest.Location = new System.Drawing.Point(994, 274);
+            this.btnTest.Name = "btnTest";
+            this.btnTest.Size = new System.Drawing.Size(125, 63);
+            this.btnTest.TabIndex = 13;
+            this.btnTest.Text = "Test Button";
+            this.btnTest.UseVisualStyleBackColor = true;
+            this.btnTest.Click += new System.EventHandler(this.btnTest_Click_1);
+            // 
+            // btn_clear
+            // 
+            this.btn_clear.Location = new System.Drawing.Point(876, 483);
+            this.btn_clear.Name = "btn_clear";
+            this.btn_clear.Size = new System.Drawing.Size(125, 63);
+            this.btn_clear.TabIndex = 12;
+            this.btn_clear.Text = "Temizle";
+            this.btn_clear.UseVisualStyleBackColor = true;
+            this.btn_clear.Click += new System.EventHandler(this.btn_kaydet_Click);
+            // 
+            // cb_product_group
+            // 
+            this.cb_product_group.FormattingEnabled = true;
+            this.cb_product_group.Location = new System.Drawing.Point(28, 235);
+            this.cb_product_group.Name = "cb_product_group";
+            this.cb_product_group.Size = new System.Drawing.Size(142, 24);
+            this.cb_product_group.TabIndex = 14;
+            this.cb_product_group.SelectedIndexChanged += new System.EventHandler(this.cb_product_group_SelectedIndexChanged);
+            // 
+            // cb_product_subgorup
+            // 
+            this.cb_product_subgorup.FormattingEnabled = true;
+            this.cb_product_subgorup.Location = new System.Drawing.Point(28, 294);
+            this.cb_product_subgorup.Name = "cb_product_subgorup";
+            this.cb_product_subgorup.Size = new System.Drawing.Size(142, 24);
+            this.cb_product_subgorup.TabIndex = 14;
             // 
             // a
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1147, 568);
-            this.Controls.Add(this.btn_kaydet);
+            this.Controls.Add(this.cb_product_subgorup);
+            this.Controls.Add(this.cb_product_group);
+            this.Controls.Add(this.btnTest);
+            this.Controls.Add(this.btn_clear);
+            this.Controls.Add(this.btn_save);
             this.Controls.Add(this.rtb_product_description);
             this.Controls.Add(this.tb_critical_stock_level);
             this.Controls.Add(this.tb_taxrate);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.lbl_koli_adedi);
             this.Controls.Add(this.cb_product_unit);
             this.Controls.Add(this.rb_kritik_stok_uyari);
             this.Controls.Add(this.rb_seri_no_takip);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tb_product_subgorup);
-            this.Controls.Add(this.tb_product_group);
             this.Controls.Add(this.tb_producte_code);
             this.Controls.Add(this.tb_product_barkode);
-            this.Controls.Add(this.tb_number_of_packages);
             this.Controls.Add(this.tb_sales_price);
             this.Controls.Add(this.tb_model_name);
             this.Controls.Add(this.label8);
@@ -450,13 +448,9 @@
         private System.Windows.Forms.TextBox tb_product_barkode;
         private System.Windows.Forms.RadioButton rb_seri_no_takip;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox tb_product_group;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox tb_product_subgorup;
         private System.Windows.Forms.ComboBox cb_product_unit;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label lbl_koli_adedi;
-        private System.Windows.Forms.TextBox tb_number_of_packages;
         private System.Windows.Forms.Label lbl_stok_kodu;
         private System.Windows.Forms.TextBox tb_producte_code;
         private System.Windows.Forms.Label label9;
@@ -469,6 +463,10 @@
         private System.Windows.Forms.RadioButton rb_kritik_stok_uyari;
         private System.Windows.Forms.RichTextBox rtb_product_description;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button btn_kaydet;
+        private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.Button btnTest;
+        private System.Windows.Forms.Button btn_clear;
+        private System.Windows.Forms.ComboBox cb_product_group;
+        private System.Windows.Forms.ComboBox cb_product_subgorup;
     }
 }

@@ -21,7 +21,9 @@ namespace Masaüstü_Stok_Yönetim_Uygulaması
 
         private void YeniStokWindow_Load(object sender, EventArgs e)
         {
-
+            StokKodunuHazirla();
+            BirimleriGetir();
+            AnaGruplariGetir();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -36,7 +38,7 @@ namespace Masaüstü_Stok_Yönetim_Uygulaması
 
         private void comboBox1_TextUpdate(object sender, EventArgs e)
         {
-            if (cb_product_unit.Text == "Koli" || cb_product_unit.Text == "KOLİ" || cb_product_unit.Text == "koli")
+            if (cb_product_unit.Text == "Koli")
             {
                 lbl_koli_adedi.Visible = true;
                 tb_number_of_packages.Visible = true;
@@ -63,29 +65,27 @@ namespace Masaüstü_Stok_Yönetim_Uygulaması
         {
 
         }
+        private void btn_clear_click(object sender, EventArgs e)
+        {
+            FormuTemizle();
+        }
 
         private void btn_kaydet_Click(object sender, EventArgs e)
         {
-            // 1. ADIM: BASİT KONTROLLER
-            // Kullanıcı Ürün Adını veya Grubunu boş bıraktıysa uyarı verip çıkıyoruz.
-            if (string.IsNullOrEmpty(tb_product_name.Text) || tb_product_group.Text == null)
+            if (string.IsNullOrEmpty(tb_product_name.Text) || cb_product_group.Items == null)
             {
                 MessageBox.Show("Lütfen Ürün Adı, Ürün Grubu ve Birim alanlarını doldurunuz.", "Eksik Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // 2. ADIM: VERİTABANI BAĞLANTISI VE TRANSACTION BAŞLATMA
             using (SqlConnection conn = SqlHelper.BaglantiGetir())
             {
                 conn.Open();
 
-                // Transaction: İşlemlerden biri hata verirse hepsini geri almak için.
                 SqlTransaction transaction = conn.BeginTransaction();
 
                 try
                 {
-                    // --- A) ÜRÜN KARTINI EKLEME (Product Tablosu) ---
-
                     string sqlUrun = @"INSERT INTO product 
                                (p_stock_keeping_unit, p_name, p_barcode, unit_id, p_group_id, p_subgroup_id, 
                                 p_brand_name, p_model_name, p_description, p_critical_stock_level, 
@@ -95,34 +95,27 @@ namespace Masaüstü_Stok_Yönetim_Uygulaması
                                 @Marka, @Model, @Aciklama, @Kritik, 
                                 @User, 1, GETDATE());
                                SELECT SCOPE_IDENTITY();";
-                    // Not: SELECT SCOPE_IDENTITY() komutu, eklenen ürünün yeni ID'sini bize geri verir.
 
                     SqlCommand cmdUrun = new SqlCommand(sqlUrun, conn, transaction);
 
-                    // Parametreleri formdan alıp SQL'e gönderiyoruz:
-                    cmdUrun.Parameters.AddWithValue("@SKU", tb_producte_code.Text);      // Stok Kodu
-                    cmdUrun.Parameters.AddWithValue("@Ad", tb_product_name.Text);        // Ürün Adı
-                    cmdUrun.Parameters.AddWithValue("@Barkod", tb_product_barkode.Text);     // Barkod
-                    cmdUrun.Parameters.AddWithValue("@Birim", cb_product_unit.SelectedValue); // Birim ID'si
-                    cmdUrun.Parameters.AddWithValue("@Grup", tb_product_group.Text); // Grup ID'si
+                    cmdUrun.Parameters.AddWithValue("@SKU", tb_producte_code.Text);
+                    cmdUrun.Parameters.AddWithValue("@Ad", tb_product_name.Text);
+                    cmdUrun.Parameters.AddWithValue("@Barkod", tb_product_barkode.Text);
+                    cmdUrun.Parameters.AddWithValue("@Birim", cb_product_unit.SelectedValue);
+                    cmdUrun.Parameters.AddWithValue("@Grup", cb_product_group.Items);
 
-                    // Alt Grup seçilmediyse veritabanına NULL gönder:
-                    if (tb_product_subgorup.Text != null)
-                        cmdUrun.Parameters.AddWithValue("@AltGrup", tb_product_subgorup.Text);
+                    if (cb_product_subgorup.Items != null)
+                        cmdUrun.Parameters.AddWithValue("@AltGrup", cb_product_subgorup.Items);
                     else
                         cmdUrun.Parameters.AddWithValue("@AltGrup", DBNull.Value);
 
                     cmdUrun.Parameters.AddWithValue("@Marka", tb_brand_name.Text);
                     cmdUrun.Parameters.AddWithValue("@Model", tb_model_name.Text);
                     cmdUrun.Parameters.AddWithValue("@Aciklama", rtb_product_description.Text);
-                    cmdUrun.Parameters.AddWithValue("@Kritik", tb_critical_stock_level.Text); // NumericUpDown'dan gelen sayı
-                    cmdUrun.Parameters.AddWithValue("@User", 1); // Şimdilik varsayılan kullanıcı ID'si 1
+                    cmdUrun.Parameters.AddWithValue("@Kritik", tb_critical_stock_level.Text);
+                    cmdUrun.Parameters.AddWithValue("@User", 1);
 
-                    // Komutu çalıştır ve Yeni Ürün ID'sini al (decimal döner, int'e çeviririz)
                     int yeniUrunID = Convert.ToInt32(cmdUrun.ExecuteScalar());
-
-
-                    // --- B) FİYAT BİLGİSİNİ EKLEME (Pricing Tablosu) ---
 
                     string sqlFiyat = @"INSERT INTO pricing 
                                 (p_id, p_purchase_price, p_sales_price, p_taxrate, p_currency) 
@@ -131,25 +124,22 @@ namespace Masaüstü_Stok_Yönetim_Uygulaması
 
                     SqlCommand cmdFiyat = new SqlCommand(sqlFiyat, conn, transaction);
 
-                    cmdFiyat.Parameters.AddWithValue("@UrunID", yeniUrunID); // Az önce aldığımız ID'yi buraya veriyoruz
+                    cmdFiyat.Parameters.AddWithValue("@UrunID", yeniUrunID);
                     cmdFiyat.Parameters.AddWithValue("@Alis", tb_purchase_price.Text);
                     cmdFiyat.Parameters.AddWithValue("@Satis", tb_sales_price.Text);
                     cmdFiyat.Parameters.AddWithValue("@Kdv", tb_taxrate.Text);
-                    cmdFiyat.Parameters.AddWithValue("@ParaBirimi", "TL"); // Şimdilik sabit TL, istersen ComboBox'tan alabilirsin.
+                    cmdFiyat.Parameters.AddWithValue("@ParaBirimi", "TL");
 
                     cmdFiyat.ExecuteNonQuery();
 
-                    // --- C) MUTLU SON: İŞLEMİ ONAYLA ---
                     transaction.Commit();
 
                     MessageBox.Show("Ürün ve fiyat bilgileri başarıyla kaydedildi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Formu temizle ki yeni kayıt yapılabilsin
                     FormuTemizle();
                 }
                 catch (Exception ex)
                 {
-                    // Hata olursa yapılan her şeyi geri al (Rollback)
                     transaction.Rollback();
                     MessageBox.Show("Kayıt sırasında bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -164,7 +154,168 @@ namespace Masaüstü_Stok_Yönetim_Uygulaması
             rtb_product_description.Text = "";
             tb_purchase_price.Text = "0";
             tb_sales_price.Text = "0";
-            // Stok kodunu tekrar çekmek gerekebilir (Eğer otomatik artıyorsa)
+        }
+
+
+
+
+        private void btnTest_Click_1(object sender, EventArgs e)
+        {
+            // Rastgele bir stok kodu üretelim ki her basışta "Bu kod zaten var" hatası almayalım.
+            string randomSuffix = DateTime.Now.ToString("mmss"); // Saniye ve salise
+            string testStokKodu = "TEST-URUN-" + randomSuffix;
+
+            using (System.Data.SqlClient.SqlConnection conn = SqlHelper.BaglantiGetir())
+            {
+                conn.Open();
+                System.Data.SqlClient.SqlTransaction transaction = conn.BeginTransaction();
+
+                try
+                {
+                    // --- 1. ADIM: ÜRÜNÜ EKLE (ID'ler Hep 1) ---
+                    string sqlUrun = @"INSERT INTO product 
+                               (p_stock_keeping_unit, p_name, p_barcode, unit_id, p_group_id, p_subgroup_id, 
+                                p_brand_name, p_model_name, p_description, p_critical_stock_level, 
+                                user_id, p_status, p_record_date) 
+                               VALUES 
+                               (@SKU, 'Otomatik Test Ürünü', '123456789', 1, 1, 1, 
+                                'TestMarka', 'TestModel', 'Bu veri kod tarafından otomatik test amaçlı eklendi.', 10, 
+                                1, 1, GETDATE());
+                               SELECT SCOPE_IDENTITY();";
+
+                    System.Data.SqlClient.SqlCommand cmdUrun = new System.Data.SqlClient.SqlCommand(sqlUrun, conn, transaction);
+                    cmdUrun.Parameters.AddWithValue("@SKU", testStokKodu);
+
+                    // Eklenen ürünün ID'sini alıyoruz
+                    int yeniUrunID = Convert.ToInt32(cmdUrun.ExecuteScalar());
+
+                    // --- 2. ADIM: FİYATI EKLE ---
+                    string sqlFiyat = @"INSERT INTO pricing 
+                                (p_id, p_purchase_price, p_sales_price, p_taxrate, p_currency) 
+                                VALUES 
+                                (@UrunID, 100.00, 150.50, 18, 'TL')";
+
+                    System.Data.SqlClient.SqlCommand cmdFiyat = new System.Data.SqlClient.SqlCommand(sqlFiyat, conn, transaction);
+                    cmdFiyat.Parameters.AddWithValue("@UrunID", yeniUrunID);
+
+                    cmdFiyat.ExecuteNonQuery();
+
+                    // Hata yoksa onayla
+                    transaction.Commit();
+
+                    MessageBox.Show("BAŞARILI!\n\n" +
+                                    "Eklenen Ürün ID: " + yeniUrunID + "\n" +
+                                    "Stok Kodu: " + testStokKodu + "\n" +
+                                    "Grup/AltGrup/Birim ID: 1\n" +
+                                    "Fiyat: 100 TL / 150.50 TL",
+                                    "Tam Veri Testi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    MessageBox.Show("HATA OLUŞTU:\n" + ex.Message, "Test Başarısız", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+        }
+
+
+        void BirimleriGetir()
+        {
+            using (SqlConnection conn = SqlHelper.BaglantiGetir())
+            {
+                try
+                {
+                    conn.Open();
+                    SqlDataAdapter da = new SqlDataAdapter("SELECT unit_id, unit_name FROM unit", conn);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    cb_product_unit.DisplayMember = "unit_name"; // Ekranda görünecek isim
+                    cb_product_unit.ValueMember = "unit_id";     // Arka plandaki ID
+                    cb_product_unit.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Birimler getirilemedi: " + ex.Message);
+                }
+            }
+        }
+
+        void AnaGruplariGetir()
+        {
+            using (SqlConnection conn = SqlHelper.BaglantiGetir())
+            {
+                try
+                {
+                    conn.Open();
+                    SqlDataAdapter da = new SqlDataAdapter("SELECT p_group_id, p_group_name FROM product_group", conn);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    cb_product_group.DisplayMember = "p_group_name";
+                    cb_product_group.ValueMember = "p_group_id";
+                    cb_product_group.DataSource = dt;
+
+                    // İlk açılışta hiçbiri seçili gelmesin (İsteğe bağlı)
+                    // cmbUrunGrubu.SelectedIndex = -1; 
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Gruplar getirilemedi: " + ex.Message);
+                }
+            }
+        }
+
+        void StokKodunuHazirla()
+        {
+            using (SqlConnection conn = SqlHelper.BaglantiGetir())
+            {
+                conn.Open();
+                // Şirket ayarlarından öneki çekiyoruz
+                SqlCommand cmd = new SqlCommand("SELECT TOP 1 stock_prefix_code FROM company_settings", conn);
+                object sonuc = cmd.ExecuteScalar();
+
+                if (sonuc != null)
+                {
+                    tb_producte_code.Text = sonuc.ToString(); // Örn: SRK-
+                }
+            }
+        }
+
+        private void cb_product_group_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Eğer seçim boşsa işlem yapma
+            if (cb_product_group.SelectedValue == null) return;
+
+            // C# Bazen ilk açılışta ID yerine tüm satırı (DataRowView) getirebilir,
+            // bu yüzden "Seçilen şey gerçekten bir sayı mı?" diye kontrol ediyoruz.
+            if (int.TryParse(cb_product_group.SelectedValue.ToString(), out int secilenGrupID))
+            {
+                using (SqlConnection conn = SqlHelper.BaglantiGetir())
+                {
+                    try
+                    {
+                        conn.Open();
+                        // Sadece seçilen Ana Gruba ait alt grupları getiriyoruz
+                        string sorgu = "SELECT p_subgroup_id, p_subgroup_name FROM product_subgroup WHERE p_group_id = @GrupID";
+
+                        SqlDataAdapter da = new SqlDataAdapter(sorgu, conn);
+                        da.SelectCommand.Parameters.AddWithValue("@GrupID", secilenGrupID);
+
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+
+                        cb_product_subgorup.DisplayMember = "p_subgroup_name";
+                        cb_product_subgorup.ValueMember = "p_subgroup_id";
+                        cb_product_subgorup.DataSource = dt;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Alt gruplar getirilemedi: " + ex.Message);
+                    }
+                }
+            }
         }
     }
 }
